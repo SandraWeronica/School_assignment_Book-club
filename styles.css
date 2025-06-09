@@ -1,0 +1,600 @@
+/* @link https://utopia.fyi/type/calculator?c=320,18,1.2,1240,20,1.25,5,2,&s=0.75%7C0.5%7C0.25,1.5%7C2%7C3%7C4%7C6,s-l&g=s,l,xl,12 */
+/* https://www.figma.com/colors/forest-green/ */
+/* https://encycolorpedia.com/541212 */
+/* https://encycolorpedia.com/fbaf2b */
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Fira+Code:wght@300..700&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Martian+Mono:wght@100..800&family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Offside&family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&family=Rethink+Sans:ital,wght@0,400..800;1,400..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Fira+Code:wght@300..700&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Martian+Mono:wght@100..800&family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&family=Rethink+Sans:ital,wght@0,400..800;1,400..800&display=swap");
+:root {
+  --step--2: clamp(0.7813rem, 0.7747rem + 0.0326vw, 0.8rem);
+  --step--1: clamp(0.9375rem, 0.9158rem + 0.1087vw, 1rem);
+  --step-0: clamp(1.125rem, 1.0815rem + 0.2174vw, 1.25rem);
+  --step-1: clamp(1.35rem, 1.2761rem + 0.3696vw, 1.5625rem);
+  --step-2: clamp(1.62rem, 1.5041rem + 0.5793vw, 1.9531rem);
+  --step-3: clamp(1.944rem, 1.771rem + 0.8651vw, 2.4414rem);
+  --step-4: clamp(2.3328rem, 2.0827rem + 1.2504vw, 3.0518rem);
+  --step-5: clamp(2.7994rem, 2.4462rem + 1.7658vw, 3.8147rem);
+
+  --green: #2e6f40;
+  --lightgreen: #a5b68d;
+  --Lightbrown: hsl(0, 65%, 40%);
+  --orange: #da8359;
+  --white: white;
+  --hover-shadow: 0px 0px 5px white;
+  --box-shadow: 0px 0px 10px black;
+  --baige: #ecdfcc;
+
+  --bgDark: black;
+  --colorDark: var(--white);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+
+body {
+  font-family: "DM Sans", sans-serif;
+  height: 100vh;
+  /* display: grid;
+  grid-template-rows: 1fr; */
+  display: flex;
+  flex-direction: column;
+  transition: all 0.5s ease-in-out;
+  background-color: var(--baige);
+}
+/* if you add any styles that are not being changed by the theme edit the css variable within darkmode
+ to the new desired value to avoid manually adding classes to a bunch of elements */
+
+.darkmode {
+  background-color: var(--bgDark);
+  color: var(--white);
+  --box-shadow: 0px 0px 10px white;
+}
+
+/* theme button */
+#switchTheme {
+  width: 30px;
+  height: 30px;
+  background-color: black;
+  border-radius: 15px;
+  cursor: pointer;
+  background-image: url("Images/darkmode.svg");
+
+  /* had to nest this here for specificity override */
+  &.close {
+    background-image: url("Images/lightmode.svg");
+  }
+
+  &:hover {
+    box-shadow: var(--hover-shadow);
+  }
+}
+/* slight link underline offset and smooth transition */
+a {
+  transition: all 0.3s ease-in-out;
+  text-underline-offset: 0.5rem;
+  text-decoration: none;
+  color: var(--bgDark);
+  font-weight: 600;
+
+  &:hover {
+    text-decoration: underline;
+    color: var(--Lightbrown);
+  }
+}
+
+main {
+  display: grid;
+  padding: 1.5rem;
+  gap: 1.5rem;
+}
+
+h1 {
+  font-family: "Bebas Neue", cursive;
+  font-weight: 300;
+  font-size: var(--step-5);
+}
+
+h2 {
+  font-family: "Bebas Neue", cursive;
+  font-weight: 300;
+  font-size: var(--step-2);
+}
+
+h3 {
+  font-family: "Bebas Neue", cursive;
+  font-weight: 300;
+  font-size: var(--step-1);
+}
+
+h4 {
+  font-family: "Bebas Neue", cursive;
+  font-weight: 300;
+  font-size: var(--step-0);
+}
+
+/* start navsection */
+#logo {
+  font-size: var(--step-2);
+  align-self: flex-start;
+  margin-right: 1rem;
+  margin-left: 0.5rem;
+}
+
+/* nested child styles */
+/* confused why did u guys grid the nav? flex not enough? */
+.navSection {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.4rem;
+  background-color: var(--lightgreen);
+  color: var(--bgDark);
+  font-weight: 700;
+  text-wrap: nowrap;
+  width: 100%;
+  
+}
+  & ul {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+
+  & li {
+    list-style-type: none;
+  }
+
+
+/* moved up to general a styles */
+/* .navSection a {
+  
+} */
+
+/* .navSection a:hover {
+  
+} */
+/* end navsection */
+
+/* start herosection */
+
+.heroSection {
+  background-image: url("Images/bokhyllaHero\ .webp");
+  /* having "" or not works the same but "" speeds up loading */
+  position: relative;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0px 1.5rem;
+  color: var(--white);
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.65);
+  }
+
+  & * {
+    position: relative;
+  }
+}
+
+/* end herosection */
+
+/* start footer */
+footer {
+  position: relative;
+}
+.copySection {
+  display: grid;
+  grid-template-columns: 1fr;
+  flex-grow: 1;
+  padding: 1.2rem 0rem;
+  background-color: var(--lightgreen);
+  color: var(--bgDark);
+  text-align: center;
+  min-width: 100vw;
+}
+
+#goUp {
+  justify-self: flex-end;
+  background-color: rgb(11, 0, 0);
+  width: 30px;
+  height: 30px;
+  background-image: url("images/up.svg");
+  margin: 0.5rem;
+  border-radius: 15px;
+
+  &:hover {
+    box-shadow: var(--hover-shadow);
+    cursor: pointer;
+  }
+}
+/* end footer */
+
+.about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  padding: 0.5rem;
+}
+.about-box {
+  border: 1px solid green;
+  padding: 14px;
+  border-radius: 15px;
+  background-color: var(--lightgreen);
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+.about-text {
+  /* margin-top: 1rem; */
+  padding:0.5rem;
+  width: 90%;
+  height: auto;
+  border-radius: 15px;
+  border-color: solid black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.box-container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+figure img {
+  width: 125px;
+  height: 200px;
+  border-radius: 5px;
+  margin: 1rem 0rem;
+  box-shadow: var(--box-shadow);
+}
+
+#userAddedBook {
+  & img {
+    width: 125px;
+  height: 200px;
+  border-radius: 5px;
+  margin: 1rem 0rem;
+  box-shadow: var(--box-shadow);
+  }
+
+  & button {
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+    padding: .5rem;
+
+    &:hover {
+      box-shadow:var(--box-shadow) ;
+      cursor: pointer;
+    }
+  }
+}
+/* commented out empty media query for now */
+/* @media (min-width: 550px) {
+} */
+/* ignore for now, was breaking close button */
+/* .modal {
+  transition: all 0.3s allow-discrete;
+  opacity: 0;
+  pointer-events: none;
+
+
+  &::backdrop {
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease-in-out;
+  }
+} */
+
+
+.modal[open]{
+
+  /* display: none; */
+  opacity: 1;
+  transition: all .3s ;
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  color: white;
+  backdrop-filter: blur(5px);
+  pointer-events: auto;
+  
+  gap: 1rem;
+
+  & figure {
+    
+    display: flex;
+    flex-direction: row;
+
+    & figcaption {
+      margin-top: 1rem;
+      margin-left: 1rem;
+    }
+  }
+
+  & .button-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 80%;
+    
+    & #deleteBook {
+      margin-left: 1rem;
+    }
+    & .closeBtn {
+      margin-right: 1rem;
+    }
+
+  }
+
+  &::backdrop {
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px);
+    transition: all .3s ;
+
+  }
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  
+
+
+  & p {
+    margin-left: 1rem;
+    text-wrap: balance;
+    margin-bottom: 1rem;
+  }
+
+  & button {
+    
+    display: block;
+    width: fit-content;
+    align-self: center;
+    cursor: pointer;
+    padding: 1rem;
+    background-color: black;
+    color: white;
+    border-radius: 10px;
+
+    &:hover {
+      box-shadow: var(--hover-shadow);
+    }
+  }
+
+ 
+}
+
+@starting-style {
+  .modal[open] {
+    
+    opacity: 0;
+    width: 10vw;
+    height:10vw;
+    
+    &::backdrop {
+      opacity: 0;
+    }
+  }
+
+
+  
+}
+
+#secForm {
+  padding: 2rem 1rem;
+}
+
+
+/* Styling the form container */
+#bookForm {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  gap: 0.5rem;
+  background-color: var(--lightgreen);
+  color: black;
+  align-items: center;
+  max-width: 400px;
+  margin: auto;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Label styling */
+#bookForm label {
+  display: flex;
+  flex-direction: column;
+  font-size: 1rem;
+  width: 100%;
+}
+
+/* Input and textarea styling */
+#bookForm input, 
+#bookForm textarea {
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  padding: 0.8em;
+  font-size: 1rem;
+  color: #333;
+  background-color: #fdfdfd;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Placeholder text color */
+#bookForm input::placeholder, 
+#bookForm textarea::placeholder {
+  color: #888;
+  font-size: 14px;
+}
+
+#bookForm .customLabel {
+  margin-top: 1rem;
+  font-size: 1.3rem;
+}
+
+/* Textarea specific styling */
+#bookForm textarea {
+  resize: vertical;
+  min-height: 100px;
+  font-family: "DM Sans", sans-serif;
+}
+
+/* Button styling */
+#bookForm button {
+  width: fit-content;
+  align-self: center;
+  border-radius: 4px;
+  padding: 0.8rem 2em;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: var(--white);
+  background-color: var(--bgDark);
+  border: none;
+  transition: background-color 0.3s ease;
+  margin-top: 2rem;
+}
+
+/* Button hover effects */
+#bookForm button:hover {
+  opacity: 0.8;
+}
+
+
+
+
+
+/* to do fix global button styling */
+
+@media (min-width: 1200px) {
+  .query-container {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    padding: 1rem;
+    justify-content: center;
+    align-items: center;
+  }
+
+  body {
+    word-spacing: 0.1rem;
+    line-height: 1.7;
+  }
+  
+  a {
+    font-size: var(--step-0);
+  }
+}
+  
+
+
+
+@media (max-width: 600px) {
+
+  .heroSection {
+    background-image: url("Images/bokhyllaHero__mobile.webp");
+  }
+  figure {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    max-width: 80vw;
+
+    & img {
+      /* align-self: center; */
+    }
+
+    & figcaption {
+      margin-top: 1rem;
+      max-width: 70vw;
+      text-wrap: balance;
+      justify-self: center;
+
+      & p {
+        width: 30ch;
+      }
+    }
+  }
+  }  
+
+
+
+@media (min-width: 600px) {
+  .query-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+}
+
+@media (min-width: 800px) {
+  .query-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+  }
+  
+  body {
+    word-spacing: 0.1rem;
+    line-height: 1.7;
+  }
+  
+  a {
+    font-size: var(--step-0);
+  }
+
+  .about-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+  }
+  .about-text {
+    padding: 1rem;
+    margin-left: 4.5rem;
+    margin-right: -15rem;
+  }
+}
+
+.hideReviewForm {
+  display: none;
+}

@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="description" content="Bok Klubban">
+  <!-- added for seo optimization, we can add some tags later but don't overdo it -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bok Klubban</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="script.js" defer></script>
+  <link rel="preload" href="Images/bokhyllaHero .webp"  as="image">  
+  <link rel="preload" href="Images/bokhyllaHero__mobile.webp.webp"  as="image">  
+
+</head>
+
+  <body>
+    <header>
+      <section class="navSection">
+        <p id="logo">Bok Klubban</p>
+        <nav>
+          <ul>
+            <!--
+            <li><a href="" aria-label="till boklistan">Boklista</a></li>
+            <li><a href="" aria-label="till medlemsformulär">Bli medlem</a></li>
+            <li><a href="" aria-label="till info om oss">Om oss</a></li>
+            <li>
+              <a href="" aria-label="till våra kontaktuppgifter"
+                >Kontakta oss</a
+              >
+            </li>
+            placement of theme button to be discussed -->
+            <li>
+              <button
+                id="switchTheme"
+                aria-label="switch color scheme button"
+              ></button>
+            </li>
+          </ul>
+        </nav>
+      </section>
+
+      <section class="heroSection">
+        <h1>Välkommen till vår bokklubb!</h1>
+        <!-- <p>
+        Upptäck spännande berättelser och diskutera med andra bokälskare. Hos oss hittar du en gemenskap av passionerade
+        läsare. Kom och delta i våra möten och låt dig förtrollas av litteraturens värld!
+
+      </p> -->
+      </section>
+    </header>
+
+  <main>
+    <section class="about-box">
+      <h2>Funderar du på vad du ska läsa härnäst?</h2>
+      <section><p class="about-text">
+       Då har du kommit helt rätt!<br>
+       Om du berättar vilka titlar och genrar du gillat tidigare, så kan vi ge dig förvånandsvärt bra förslag på vad du kan läsa härnäst!
+       Här kan du även se vad dina vänner läser och gillar, samt hittar forum för att diskutera dina favoritböcker.
+       Så kom in i värmen och frottera bland likasinnade i böckernas magiska värld.
+      </p>
+    </section>
+
+    </section>
+
+      <section id="allBooks">
+        <section class="box-container">
+          <h2>Classics</h2>
+          <div class="query-container">
+            <article>
+              <figure>
+                <img src="Images/jane austen.webp" alt="" />
+                <figcaption>
+                  <h3>Sense and sensibility</h3>
+                  <h4>Jane Austen</h4>
+                  <p>
+                    Förnuft och känsla av Jane Austen handlar om systrarna
+                    Elinor och Marianne Dashwood, som navigerar kärlek, förlust
+                    och samhällsförväntningar.
+                  </p>
+                </figcaption>
+              </figure>
+            </article>
+            <article>
+              <figure>
+                <img src="Images/Charles Dickens.webp" alt="" />
+                <figcaption>
+                  <h3>A tale of two cities</h3>
+                  <h4>Charles Dickens</h4>
+                  <p>
+                    A Tale of Two Cities av Charles Dickens utspelar sig under
+                    den franska revolutionen och skildrar livsöden i Paris och
+                    London.
+                  </p>
+                </figcaption>
+              </figure>
+            </article>
+            <article>
+              <figure>
+                <img src="Images/Oscar Wilde.webp" alt="" />
+                <figcaption>
+                  <h3>The Picture of Dorian Gray</h3>
+                  <h4>Oscar Wilde</h4>
+                  <p>
+                    The Picture of Dorian Gray av Oscar Wilde handlar om Dorian
+                    Gray, en ung man vars porträtt åldras i hans ställe medan
+                    han lever ett liv fyllt av hedonism och moraliskt förfall.
+                  </p>
+                </figcaption>
+              </figure>
+            </article>
+            <article>
+              <figure>
+                <img src="Images/Emily Brontë.webp" alt="" />
+                <figcaption>
+                  <h3>Wuthering Heights</h3>
+                  <h4>Emily Brontë</h4>
+                  <p>
+                    Wuthering Heights av Emily Brontë är en mörk och passionerad
+                    berättelse om kärlek och hämnd, centrerad kring Heathcliff
+                    och Catherine Earnshaw.
+                  </p>
+                </figcaption>
+              </figure>
+            </article>
+          </div>
+        </section>
+
+        <section class="box-container">
+          <h2>Romance</h2>
+          <div class="query-container">
+            <article>
+              <figure>
+                <img src="Images/Emily Henry.webp" alt="" />
+                <figcaption>
+                  <h3>Funny story</h3>
+                  <h4>Emily Henry</h4>
+                  <p>
+                    Funny Story av Emily Henry är en romantisk komedi som följer
+                    Daphne, som flyttar in hos sin ex-pojkväns bästa vän, Nick,
+                    efter ett uppbrott.
+                  </p>
+                </figcaption>
+              </figure>
+            </article>
+            <article>
+              <figure>
+                <img src="Images/Holly Black.webp" alt="" />
+                <figcaption>
+                  <h3>The queen of nothing</h3>
+                  <h4>Holly black</h4>
+                  <p>
+                    The Queen of Nothing av Holly Black är den tredje delen i
+                    The Folk of the Air-serien. Boken följer Jude Duarte, en
+                    dödlig som återvänder till Faerie efter att ha blivit
+                    exilerad.
+                  </p>
+                </figcaption>
+              </figure>
+            </article>
+            <article>
+              <figure>
+                <img src="Images/Lynn Painter.webp" alt="" />
+                <figcaption>
+                  <h3>Nothing like the movies</h3>
+                  <h4>Lynn Painter</h4>
+                  <p>
+                    Nothing Like the Movies av Lynn Painter är en lättsam,
+                    romantisk berättelse som kretsar kring huvudkaraktärerna,
+                    som har olika syn på kärlek.
+                  </p>
+                </figcaption>
+              </figure>
+            </article>
+            <article>
+              <figure>
+                <img src="Images/Elsie Silver.webp" alt="" />
+                <figcaption>
+                  <h3>Wild Eyes</h3>
+                  <h4>Elsie Silver</h4>
+                  <p>
+                    Wild Eyes av Elsie Silver är en romantisk roman som utspelar
+                    sig i en småstad och fokuserar på passion, kärlek och
+                    försoning.
+                  </p>
+                </figcaption>
+              </figure>
+            </article>
+          </div>
+        </section>
+
+        <section class="box-container">
+          <h2>Thriller</h2>
+          <div class="query-container">
+            <article>
+              <figure>
+                <img src="Images/Chelsea Bieker.webp" alt="" />
+                <figcaption>
+                  <h3>Madwoman</h3>
+                  <h4>Chelsea Bieker</h4>
+                  <p>
+                    Madwoman av Chelsea Bieker är en rå och intensiv berättelse
+                    om samhälle, överlevnad och kvinnlig motståndskraft.
+                  </p>
+                </figcaption>
+              </figure>
+            </article>
+            <article>
+              <figure>
+                <img src="Images/J.H.Markert.webp" alt="" />
+                <figcaption>
+                  <h3>Sleep tight</h3>
+                  <h4>J.H. Markert</h4>
+                  <p>
+                    Madwoman av Chelsea Bieker är en rå och intensiv berättelse
+                    om samhälle, överlevnad och kvinnlig motståndskraft.
+                  </p>
+                </figcaption>
+              </figure>
+            </article>
+            <article>
+              <figure>
+                <img src="Images/M.L. Rio.webp" alt="" />
+                <figcaption>
+                  <h3>Graveyard shift</h3>
+                  <h4>M.L. Rio</h4>
+                  <p>
+                    Graveyard Shift av M.L. Rio är en fängslande och mörk
+                    romantisk thriller som utspelar sig i en liten stad.
+                  </p>
+                </figcaption>
+              </figure>
+            </article>
+            <article>
+              <figure>
+                <img src="Images/Marissa Stapley.webp" alt="" />
+                <figcaption>
+                  <h3>The lightning bottles</h3>
+                  <h4>Marissa Stapley</h4>
+                  <p>
+                    The Lightning Bottles av Marissa Stapley är en känsloladdad
+                    roman om kärlek, minnen och förlust. Den följer en grupp
+                    vänner som en gång var på gränsen till framgång som musiker.
+                  </p>
+                </figcaption>
+              </figure>
+            </article>
+          </div>
+        </section>
+      </section>
+
+      <section id="userAddedBook" class="query-container"></section>
+
+      <section id="secForm">
+        <form action="" id="bookForm">
+          <label class="customLabel">Bok</label>
+          <label for="yourBook"
+            ><input
+              name="yourBook"
+              type="text"
+              placeholder="Din bok"
+              id="yourBook"
+              required
+          /></label>
+          <label class="customLabel">Författare</label>
+          <label for="author"
+            ><input name="author" placeholder="Författare" id="author" required
+          /></label>
+          <label class="customLabel">Länk</label>
+          <label for="link"
+            ><input
+              name="link"
+              type="text"
+              placeholder="Länk till bild"
+              id="picture"
+          /></label>
+          <label class="customLabel">Om boken</label>
+          <label>
+            <textarea
+              name="description"
+              placeholder="Skriv lite om boken..."
+              id="bookDescription"
+              required
+            ></textarea>
+          </label>
+
+          <button id="submit">SUBMIT</button>
+          <!-- <button class="modalBtn">Öppna modal</button> -->
+        </form>
+      </section>
+
+      <dialog class="modal">
+        <article>
+          <figure>
+            <img id="modalImage" />
+            <figcaption>
+              <h3 id="modalTitle"></h3>
+              <h4 id="modalAuthor"></h4>
+              <p id="modalDescription"></p>
+              <ul id="modalReviews"></ul>
+            </figcaption>
+          </figure>
+          <button id="reviewButton">Skriv en recension</button>
+        </article>
+        <form action="" class="hideReviewForm" id="reviewForm">
+          <label for="review"
+            >Recension<textarea name="review" id="review" required></textarea>
+          </label>
+          <select name="score" id="score">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+          <button id="submitReview">Lägg till</button>
+        </form>
+        <div class="button-wrapper">
+          <div class="button">
+            <button id="deleteBook">ta bort bok</button>
+          </div>
+          <button class="closeBtn">Stäng</button>
+        </div>
+      </dialog>
+    </main>
+
+    <footer>
+      <section class="copySection">
+        <p>&copy;Alla rättigheter tillhandahålls av Bok Klubban AB</p>
+        <button id="goUp" aria-label="go back to top button"></button>
+      </section>
+    </footer>
+  </body>
+</html>
